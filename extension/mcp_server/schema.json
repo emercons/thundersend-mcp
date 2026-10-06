@@ -1,0 +1,138 @@
+[
+  {
+    "namespace": "mcpServer",
+    "description": "Compose-only MCP HTTP server for AI integration",
+    "functions": [
+      {
+        "name": "start",
+        "type": "function",
+        "async": true,
+        "description": "Start the MCP HTTP server on localhost",
+        "parameters": []
+      },
+      {
+        "name": "getServerInfo",
+        "type": "function",
+        "async": true,
+        "description": "Get current server status, port, connection file path, build information, and lastError. Available only to the extension, not over MCP.",
+        "parameters": []
+      },
+      {
+        "name": "getCurrentAuthToken",
+        "type": "function",
+        "async": true,
+        "description": "Get the auth token currently used by the running MCP server",
+        "parameters": []
+      },
+      {
+        "name": "getAccountAccessConfig",
+        "type": "function",
+        "async": true,
+        "description": "Get the current account access control configuration",
+        "parameters": []
+      },
+      {
+        "name": "getToolAccessConfig",
+        "type": "function",
+        "async": true,
+        "description": "Get the current tool access control configuration",
+        "parameters": []
+      },
+      {
+        "name": "setToolAccess",
+        "type": "function",
+        "async": true,
+        "description": "Set which tools are disabled",
+        "parameters": [
+          {
+            "name": "disabledTools",
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Array of tool names to disable. Empty array means all tools enabled."
+          }
+        ]
+      },
+      {
+        "name": "setAccountAccess",
+        "type": "function",
+        "async": true,
+        "description": "Set which accounts the MCP server can send from",
+        "parameters": [
+          {
+            "name": "allowedAccountIds",
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Array of account IDs to allow. Empty array means all accounts."
+          }
+        ]
+      },
+      {
+        "name": "getBlockSkipReview",
+        "type": "function",
+        "async": true,
+        "description": "Get the Block skipReview preference. Defaults to true, which forces sendMail to open a compose window for human review instead of sending directly.",
+        "parameters": []
+      },
+      {
+        "name": "setBlockSkipReview",
+        "type": "function",
+        "async": true,
+        "description": "Set whether direct sending (skipReview) is blocked. Defaults to true; explicitly set false to let sendMail send without a review window.",
+        "parameters": [
+          {
+            "name": "blockSkipReview",
+            "type": "boolean",
+            "description": "When true (the default), sendMail rejects skipReview=true and always opens a compose window."
+          }
+        ]
+      },
+      {
+        "name": "getStableAuthToken",
+        "type": "function",
+        "async": true,
+        "description": "Get the stored stable auth token preference",
+        "parameters": []
+      },
+      {
+        "name": "setStableAuthToken",
+        "type": "function",
+        "async": true,
+        "description": "Set the stored stable auth token preference",
+        "parameters": [
+          {
+            "name": "stableAuthToken",
+            "type": "string",
+            "description": "Stable token to reuse across MCP server starts. Empty string clears the preference and restores per-startup rotation."
+          }
+        ]
+      },
+      {
+        "name": "generateAuthToken",
+        "type": "function",
+        "async": true,
+        "description": "Generate a fresh auth token string",
+        "parameters": []
+      },
+      {
+        "name": "getListenAll",
+        "type": "function",
+        "async": true,
+        "description": "Get whether the server listens on all network interfaces",
+        "parameters": []
+      },
+      {
+        "name": "setListenAll",
+        "type": "function",
+        "async": true,
+        "description": "Set whether the server listens on all network interfaces. Warning: the authentication token and mail content travel in clear text on the LAN.",
+        "parameters": [
+          {
+            "name": "listenAll",
+            "type": "boolean",
+            "description": "When true, server binds to 0.0.0.0 instead of 127.0.0.1. Server will be restarted."
+          }
+        ]
+      }
+    ]
+  }
+]

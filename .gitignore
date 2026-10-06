@@ -1,0 +1,4 @@
+node_modules/
+extension/buildinfo.json
+*.log
+.DS_Store

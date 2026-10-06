@@ -1,0 +1,43 @@
+{
+  "name": "thundersend-mcp",
+  "version": "0.1.0",
+  "description": "Compose-only MCP server for Thunderbird/Betterbird: an AI assistant can save drafts and send mail, nothing else. Minimal fork of TKasperczyk/thunderbird-mcp.",
+  "author": "emercons",
+  "contributors": [
+    "Tomasz Kasperczyk (upstream thunderbird-mcp)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "thunderbird",
+    "betterbird",
+    "email",
+    "ai",
+    "claude"
+  ],
+  "bin": {
+    "thundersend-mcp": "./mcp-bridge.cjs"
+  },
+  "files": [
+    "mcp-bridge.cjs",
+    "extension/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.cjs",
+    "lint": "eslint .",
+    "build": "node scripts/build-xpi.cjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "eslint-plugin-n": "^18.1.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "globals": "^17.5.0"
+  }
+}
