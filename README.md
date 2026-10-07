@@ -62,7 +62,7 @@ are refused on both the bridge and the extension side.
      "mcpServers": {
        "thundersend": {
          "command": "node",
-         "args": ["C:\\git-local\\betterbird-mcp\\thundersend-mcp\\mcp-bridge.cjs"]
+         "args": ["C:\\git-local-26-06\\thundersend-mcp\\mcp-bridge.cjs"]
        }
      }
    }
